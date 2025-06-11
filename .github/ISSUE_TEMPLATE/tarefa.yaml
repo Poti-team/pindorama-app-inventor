@@ -2,7 +2,7 @@ name: Tarefa
 description: Atividade ou processo a ser feito
 title: "Tarefa: "
 labels: ["tarefa"]
-assignees: ""
+assignees: []
 body:
   - type: dropdown
     id: prioridade
@@ -15,13 +15,6 @@ body:
         - "🟢 Baixa (Backlog/não crítica)"
     validations:
       required: true
-
-  - type: date
-    id: prazo
-    attributes:
-      label: Prazo final
-      description: Data limite para conclusão (opcional)
-      optional: true
 
   - type: textarea
     id: descricao
@@ -47,7 +40,8 @@ body:
     attributes:
       label: Contexto adicional
       description: Adicione explicações extras, prints, trechos de código etc
-      optional: true
+    validations:
+      required: false
 
   - type: textarea
     id: dependencias
@@ -57,4 +51,5 @@ body:
       placeholder: |
         - Relacionado a #123
         - Bloqueia #456
-      optional: true
+    validations:
+      required: false
